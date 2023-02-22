@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	let data = 10;//windowX
+	
+	function func(){ //<--일반함수 : 일반함수 안에서 this는 window 객체이다.
+		this.data=20; //window O
+		data=30; 
+			
+		console.log("1. data:"+data); //30
+		console.log("2. this.data"+this.data); //20
+		console.log("3. window.data"+window.data); //20
+	}
+	
+	
+	func();
+
+	
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

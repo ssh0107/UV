@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "cross.js"></script>
+<script type="text/javascript">
+
+function doProcess(){
+	let result = document.querySelector("#result");
+	result.innerHTML = "<span>이벤트 결과1</span>";
+	
+}
+
+function doProcess2(){
+	alert("이벤트 결과")
+}
+
+window.onload= function(){
+	let btn2 = document.querySelector("#btn2");
+	//btn2.onclick = doProcess2; // 함수의 주소값
+	//btn2.onclick = doProcess; // 이렇게 하면 덮어쓰기가 돼서 btn2에 이벤트 2개를 넣을 수 없음
+	//btn2.onclick = doProcess2(); //함수 호출해서 리턴값을 btn2.onclick에 저장하라는 말
+
+	//이벤트 리스너방식
+	//btn2.addEventListener('click', doProcess2, false)
+	//btn2.addEventListener('click', doProcess, false)
+	
+	cross.Event.addListener(btn2, 'click', doProcess2, false);
+	cross.Event.addListener(btn2, 'click', doProcess, false);
+	
+}
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+	<input type = "button" id = "btn" value="버튼1" onclick="doProcess()"> &nbsp; &nbsp;
+	<input type = "button" id = "btn2" value="버튼2">
+	<div id="result"></div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

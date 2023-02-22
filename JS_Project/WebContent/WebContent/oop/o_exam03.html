@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>  
+</head>
+<script type ="text/javascript">
+/* 
+	let a = 4;
+	let b= 4;
+	console.log(a==b); //true
+	
+	
+	let c ={a:1};
+	let d ={a:1};
+	console.log(c==d); //false -> 주소값을 비교했기 때문에
+	
+	
+	let e= d;
+	console.log(d==e); //true
+	console.log(c==e); //false
+	
+	d.a = 2;
+	console.log(e.a);//2
+	console.log(c.a); //1
+ */
+	
+
+	/* let a = {q: 1};
+	let b = a;
+	console.log(a===b); //true
+	
+	b.q = 3;
+	console.log(b);
+	console.log(a);
+
+	let c = {...a};
+	console.log(c);
+	console.log(a===c);//false => 주소값이 다르다.
+	
+	a.q = 4;
+	console.log(a); //{q:4}
+	console.log(c); //{q:3}
+	 */
+	 
+	 
+	 
+	//객체의 내용 일치 여부 
+	let a = {q:1}; 
+	let b = {...a};
+	console.log(b);
+	console.log(a.q === b.q); //true
+	console.log(JSON.stringify(a));
+	console.log(JSON.stringify(b));
+	console.log(JSON.stringify(a)===JSON.stringify(b)); //true
+	 
+	let c = {a:1, b:2};
+	let d = {...c};
+	console.log(JSON.stringify(c)===JSON.stringify(d));//true
+	
+	
+	let e = {b:2, a:1} //해결하려고 위에 라이브러리 추가??
+	console.log(JSON.stringify(c)===JSON.stringify(e)); //false -> 값 같고 순서만 다른 것도 false뜸
+	console.log(_.isEqual(c,e)); //true
+	
+	
+</script>
+<body>
+
+</body>
+</html>
