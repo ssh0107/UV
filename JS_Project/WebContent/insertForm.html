@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){//웹페이지가 로딩되면 자동 호출
+	
+	$("#button1").click(function(){
+		//id가 $("")인 태그에 입력된값
+	    var writer =$("#writer").val();
+	    var title =$("#title").val();
+	    var contents =$("#contents").val();
+		
+		$.ajax({
+			type : "post",
+			url : "result.jsp",
+			data : "writer="+writer+"&title="+title+"&contents="+contents,
+				success : function(data){
+				//id가 result 인 태그의 내용 변경
+				$("#result").html(data);
+				
+			}
+			
+		});
+		
+		
+		
+	});
+	
+});
+</script>
+</head>
+<body>
+
+
+	작성자 : <input type="text" id="writer"><br>
+    제목 : <input type="text" id="title"><br>
+    내용 : <br>
+    <textarea rows="6" cols="70" id="contents"></textarea>
+    <br>
+    
+	<input type="button" id="button1" value="등록">
+	<div id="result">결과 출력 영역</div>
+
+</body>
+</html>
